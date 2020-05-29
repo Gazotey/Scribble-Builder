@@ -12,7 +12,7 @@
     "electron-builder": "^22.7.0"
   },
   "scripts": {
-    "start": "rmdir /s /q C:\\Users\\Vincent\\AppData\\Roaming\\scribble-builder && electron .",
+    "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
