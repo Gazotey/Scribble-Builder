@@ -1,0 +1,41 @@
+{
+  "name": "scribble-builder",
+  "version": "1.0.0",
+  "description": "A visual tool for building Scribble projects into standalone games",
+  "main": "main.js",
+  "dependencies": {
+    "cordova": "^9.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^22.7.0"
+  },
+  "scripts": {
+    "start": "rmdir /s /q C:\\Users\\Vincent\\AppData\\Roaming\\scribble-builder && electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "build": {
+    "appId": "foobar.id",
+    "mac": {
+      "category": "foo.bar.category"
+    },
+    "protocols": {
+      "name": "foobar-protocol",
+      "schemes": [
+        "foobar"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gazotey/Scribble-Builder.git"
+  },
+  "author": "Vincent van Hoven",
+  "bugs": {
+    "url": "https://github.com/Gazotey/Scribble-Builder/issues"
+  },
+  "homepage": "https://github.com/Gazotey/Scribble-Builder#readme"
+}

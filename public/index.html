@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Scribble Builder</title>
+        <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div v-cloak id="app">
+            <header>
+                <h4 class="inline">Scribble Editor Status: </h4>
+                <h4 v-if="isEditorConnected === false" class="text-grey inline">NOT CONNECTED</h4>
+                <h4 v-else class="text-green inline">CONNECTED</h4>
+            </header>
+
+            <main>
+                <div v-if="isCurrentlyBuilding" class="content-wrapper">
+                    <h5 class="mb-4">Building android app...</h5>
+                    <div class="loader"></div>
+                </div>
+
+                <div v-else class="content-wrapper">
+                    <h5>Ready to build! Just trigger a build from the Scribble Editor.</h5>
+                </div>
+            </main>
+        </div>
+
+        <script>
+            if (typeof module === 'object') { window.module = module; module = undefined; }
+        </script>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="vue.js"></script>
+        <script type="text/javascript" src="scribble.builder.js"></script>
+        <script>if (window.module) module = window.module;</script>
+    </body>
+</html>
